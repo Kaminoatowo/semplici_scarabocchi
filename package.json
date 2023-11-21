@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwind build src/style.css -o dist/style.css"
+    "build:css": "tailwind build -i src/style.css -o dist/style.css",
+    "watch:css": "tailwind build -i src/style.css -o dist/style.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "tailwindcss": "^3.3.5"
   }
 }
