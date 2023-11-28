@@ -66,10 +66,11 @@ let liH3 = makeLi({ text: "About", link: "./about.html" });
 ulH.append(liH1);
 ulH.append(liH2);
 ulH.append(liH3);
-nav.append(ulH);
+navHorizontal.append(ulH);
 
 let header = document.getElementById('header');
 header.className = "text-white m-5 font-bold truncate relative";
 
 header.append(containerDiv);
 header.append(hr);
+header.append(navHorizontal);
