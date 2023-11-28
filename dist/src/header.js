@@ -39,7 +39,7 @@ let ul = document.createElement('ul');
 ul.className = "list-none";
 let listDiv = document.createElement('div');
 listDiv.className = "text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
-let li1 = makeLi({ text: "Home", link: "./index.html" });
+let li1 = makeLi({ text: "Home", link: "../index.html" });
 let li2 = makeLi({ text: "Blog", link: "./blog.html" });
 let li3 = makeLi({ text: "About", link: "./about.html" });
 
@@ -58,7 +58,7 @@ let navHorizontal = document.createElement('nav');
 navHorizontal.className = "h-5 relative";
 let ulH = document.createElement('ul');
 ulH.className = "list-none";
-let liH1 = makeLi({ text: "All posts", link: "./index.html" });
+let liH1 = makeLi({ text: "All posts", link: "../index.html" });
 let liH2 = makeLi({ text: "Drawings", link: "./blog.html" });
 let liH3 = makeLi({ text: "About", link: "./about.html" });
 
