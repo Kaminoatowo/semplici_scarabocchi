@@ -25,10 +25,17 @@ function otherArticles() {
     return externalDiv;
 }   
 
-let bacheca = document.getElementById("bacheca");
+let bacheca = document.createElement("div");
+bacheca.className = "p-2 relative columns-2 sm:columns-3 gap-5";
+
 bacheca.append(firstArticle());
 bacheca.append(otherArticles());
 bacheca.append(otherArticles());
 bacheca.append(otherArticles());
 bacheca.append(otherArticles());
 bacheca.append(otherArticles());
+
+let articles = document.getElementById('articles');
+articles.className = "p-2 relative";
+
+articles.append(bacheca);
