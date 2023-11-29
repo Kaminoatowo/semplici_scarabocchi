@@ -42,14 +42,14 @@ ul.className = "list-none";
 let listDiv = document.createElement('div');
 listDiv.className = "text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 let li1, li2, li3;
-if (currentURL.includes("index.html")) {
-    li1 = makeLi({ text: "Home", link: "./index.html" });
-    li2 = makeLi({ text: "Blog", link: "./dist/blog.html" });
-    li3 = makeLi({ text: "About", link: "./dist/about.html" });
-} else {
+if (currentURL.includes("blog.html") || currentURL.includes("about.html")) {
     li1 = makeLi({ text: "Home", link: "../index.html" });
     li2 = makeLi({ text: "Blog", link: "./blog.html" });
     li3 = makeLi({ text: "About", link: "./about.html" });
+} else {
+    li1 = makeLi({ text: "Home", link: "./index.html" });
+    li2 = makeLi({ text: "Blog", link: "./dist/blog.html" });
+    li3 = makeLi({ text: "About", link: "./dist/about.html" });
 }
 
 listDiv.append(li1);
