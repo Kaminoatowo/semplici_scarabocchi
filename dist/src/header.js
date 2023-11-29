@@ -17,7 +17,6 @@ function makeLi(params) {
 }
 
 let currentURL = window.location.href;
-console.log(currentURL);
 
 let containerDiv = document.createElement('div');
 containerDiv.className = 'text-center';
