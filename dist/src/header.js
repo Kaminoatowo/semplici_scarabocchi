@@ -1,7 +1,7 @@
 function makeSpanHead(text_color, move_x, move_y, move_z) {
     let span = document.createElement('span');
     span.textContent = "Semplici Scarabocchi";
-    span.className = text_color + " text-5xl " + move_x + " " + move_y + " absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " + move_z;
+    span.className = text_color + " text-3xl sm:text-5xl " + move_x + " " + move_y + " absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " + move_z;
     return span;
 }
 
@@ -16,6 +16,8 @@ function makeLi(params) {
     return li;
 }
 
+let currentURL = window.location.href;
+
 let containerDiv = document.createElement('div');
 containerDiv.className = 'text-center';
 
@@ -23,7 +25,7 @@ let head1 = document.createElement('h1');
 head1.className = "m-5 h-5 relative";
 let span1 = document.createElement('span');
 span1.textContent = "Semplici Scarabocchi";
-span1.className = "text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20";
+span1.className = "text-3xl sm:text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20";
 let span2 = makeSpanHead("text-slate-800", "ml-0.5", "mt-0.5", "z-10");
 let span3 = makeSpanHead("text-black", "ml-1", "mt-1", "z-10");
 
@@ -39,9 +41,16 @@ let ul = document.createElement('ul');
 ul.className = "list-none";
 let listDiv = document.createElement('div');
 listDiv.className = "text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
-let li1 = makeLi({ text: "Home", link: "../index.html" });
-let li2 = makeLi({ text: "Blog", link: "./blog.html" });
-let li3 = makeLi({ text: "About", link: "./about.html" });
+let li1, li2, li3;
+if (currentURL.includes("index.html")) {
+    li1 = makeLi({ text: "Home", link: "./index.html" });
+    li2 = makeLi({ text: "Blog", link: "./dist/blog.html" });
+    li3 = makeLi({ text: "About", link: "./dist/about.html" });
+} else {
+    li1 = makeLi({ text: "Home", link: "../index.html" });
+    li2 = makeLi({ text: "Blog", link: "./blog.html" });
+    li3 = makeLi({ text: "About", link: "./about.html" });
+}
 
 listDiv.append(li1);
 listDiv.append(li2);
