@@ -17,6 +17,7 @@ function makeLi(params) {
 }
 
 let currentURL = window.location.href;
+console.log(currentURL);
 
 let containerDiv = document.createElement('div');
 containerDiv.className = 'text-center';
@@ -44,12 +45,12 @@ listDiv.className = "text-center absolute top-1/2 left-1/2 transform -translate-
 let li1, li2, li3;
 if (currentURL.includes("blog.html") || currentURL.includes("about.html")) {
     li1 = makeLi({ text: "Home", link: "../index.html" });
-    li2 = makeLi({ text: "Blog", link: "./blog.html" });
-    li3 = makeLi({ text: "About", link: "./about.html" });
+    li2 = makeLi({ text: "Blog", link: "blog.html" });
+    li3 = makeLi({ text: "About", link: "about.html" });
 } else {
-    li1 = makeLi({ text: "Home", link: "./index.html" });
-    li2 = makeLi({ text: "Blog", link: "./dist/blog.html" });
-    li3 = makeLi({ text: "About", link: "./dist/about.html" });
+    li1 = makeLi({ text: "Home", link: "index.html" });
+    li2 = makeLi({ text: "Blog", link: "dist/blog.html" });
+    li3 = makeLi({ text: "About", link: "dist/about.html" });
 }
 
 listDiv.append(li1);
