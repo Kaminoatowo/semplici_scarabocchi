@@ -9,7 +9,7 @@ function makeLi(params) {
     let li = document.createElement('li');
     li.className = "float-left";
     let link = document.createElement('a');
-    link.className = "block text-center py-1 px-2 sm:px-3 hover:bg-tertiary";
+    link.className = "block text-center py-1 px-3 hover:bg-tertiary";
     link.textContent = params.text;
     link.href = params.link;
     li.append(link);
