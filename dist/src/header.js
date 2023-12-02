@@ -5,11 +5,11 @@ function makeSpanHead(text_color, move_x, move_y, move_z) {
     return span;
 }
 
-function makeLi(params) {
+function makeLi(params, padding="px-3") {
     let li = document.createElement('li');
     li.className = "float-left";
     let link = document.createElement('a');
-    link.className = "block text-center py-1 px-3 hover:bg-tertiary";
+    link.className = "block text-center py-1 " + padding + " hover:bg-tertiary";
     link.textContent = params.text;
     link.href = params.link;
     li.append(link);
@@ -43,13 +43,13 @@ let listDiv = document.createElement('div');
 listDiv.className = "text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 let li1, li2, li3;
 if (currentURL.includes("blog.html") || currentURL.includes("about.html")) {
-    li1 = makeLi({ text: "Home", link: "../index.html" });
-    li2 = makeLi({ text: "Blog", link: "blog.html" });
-    li3 = makeLi({ text: "About", link: "about.html" });
+    li1 = makeLi({ text: "Home", link: "../index.html"}, "px-2");
+    li2 = makeLi({ text: "Blog", link: "blog.html"});
+    li3 = makeLi({ text: "About", link: "about.html"});
 } else {
-    li1 = makeLi({ text: "Home", link: "index.html" });
-    li2 = makeLi({ text: "Blog", link: "dist/blog.html" });
-    li3 = makeLi({ text: "About", link: "dist/about.html" });
+    li1 = makeLi({ text: "Home", link: "index.html"}, "px-2");
+    li2 = makeLi({ text: "Blog", link: "dist/blog.html"});
+    li3 = makeLi({ text: "About", link: "dist/about.html"});
 }
 
 listDiv.append(li1);
@@ -67,9 +67,9 @@ let navHorizontal = document.createElement('nav');
 navHorizontal.className = "h-5 relative";
 let ulH = document.createElement('ul');
 ulH.className = "list-none";
-let liH1 = makeLi({ text: "All posts", link: "../index.html" });
-let liH2 = makeLi({ text: "Drawings", link: "./blog.html" });
-let liH3 = makeLi({ text: "About", link: "./about.html" });
+let liH1 = makeLi({ text: "All posts", link: "../index.html", padding: "px-3"});
+let liH2 = makeLi({ text: "Drawings", link: "./blog.html", padding: "px-3"});
+let liH3 = makeLi({ text: "About", link: "./about.html", padding: "px-3"});
 
 
 ulH.append(liH1);
